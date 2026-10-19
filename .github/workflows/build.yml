@@ -13,6 +13,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -20,7 +21,6 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: CV.tex
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
       - name: Preparar carpeta pública
         run: |
