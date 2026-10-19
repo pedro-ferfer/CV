@@ -20,11 +20,12 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: CV.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
       - name: Preparar carpeta pública
         run: |
           mkdir public
-          cp cv.pdf public/cv.pdf
+          cp CV.pdf public/cv.pdf
 
       - uses: actions/upload-pages-artifact@v3
         with:
